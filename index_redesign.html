@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bay'Hef / DJ Ayan Beatz - The Ultimate Party Architect</title>
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0a0a0a;
+      color: #eee;
+      line-height: 1.5;
+      padding: 20px;
+    }
+    a {
+      color: #ff1a1a;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    h1, h2, h3 {
+      font-family: 'Impact', sans-serif;
+      color: #ff1a1a;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    h2 {
+      font-size: 2rem;
+      border-bottom: 3px solid #ff1a1a;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 15px;
+      font-size: 1rem;
+      color: #ddd;
+    }
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      background: url('images/Bay\'Hef.jpeg') no-repeat center center/cover;
+      height: 450px;
+      color: white;
+      position: relative;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 20px #ff1a1a;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(10,10,10,0.7);
+      border-radius: 10px;
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 40px;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      font-style: italic;
+      margin-bottom: 30px;
+      color: #ff6666;
+    }
+    .btn-primary {
+      background-color: #ff1a1a;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      cursor: pointer;
+      width: fit-content;
+      transition: background-color 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .btn-primary:hover {
+      background-color: #cc0000;
+    }
+    /* About Section */
+    .about {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 50px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .about-text {
+      flex: 1 1 500px;
+    }
+    .about-text p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+    .about-image {
+      flex: 1 1 350px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 15px #ff1a1a;
+    }
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+    /* Mixes Section */
+    .mixes {
+      margin-bottom: 50px;
+    }
+    .mixes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .mix-card {
+      background-color: #1a1a1a;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #ff1a1a;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+    .mix-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #ff4d4d;
+    }
+    .mix-title {
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: #ff1a1a;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .mix-description {
+      flex-grow: 1;
+      color: #ddd;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+    .mix-audio {
+      width: 100%;
+      outline: none;
+      border-radius: 10px;
+      background-color: #000;
+    }
+    /* Social Media Section */
+    .social-media {
+      background-color: #1a1a1a;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 50px;
+      box-shadow: 0 0 15px #ff1a1a;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      color: #fff;
+    }
+    .social-item {
+      text-align: center;
+      margin: 10px 20px;
+      flex: 1 1 150px;
+    }
+    .social-icon {
+      font-size: 2.5rem;
+      color: #ff1a1a;
+      margin-bottom: 10px;
+    }
+    .social-count {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #ff6666;
+    }
+    .social-label {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    /* Venue Section */
+    .venue {
+      margin-bottom: 50px;
+    }
+    .venue ul {
+      list-style: none;
+      padding-left: 0;
+      color: #ddd;
+      font-size: 1rem;
+    }
+    .venue ul li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    .venue ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #ff1a1a;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+    /* Contact Section */
+    .contact {
+      background-color: #1a1a1a;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 15px #ff1a1a;
+    }
+    .contact h2 {
+      color: #ff1a1a;
+      margin-bottom: 20px;
+    }
+    .contact p {
+      color: #ddd;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    .contact a {
+      color: #ff1a1a;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        height: 350px;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .about {
+        flex-direction: column;
+      }
+      .about-image, .about-text {
+        flex: 1 1 100%;
+      }
+      .mixes-grid {
+        grid-template-columns: 1fr;
+      }
+      .social-media {
+        flex-direction: column;
+      }
+      .social-item {
+        margin: 15px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Bay'Hef (HipHop, Reggae, R&B) aka DJ Ayan Beatz (EDM)</h1>
+        <p>The Ultimate Party Architect</p>
+        <p><em>More Than a DJ, I'm a Party System – Igniting Dance Floors & Driving Revenue for Reno's Top Venues.</em></p>
+        <button class="btn-primary" onclick="document.getElementById('mixes').scrollIntoView({behavior:'smooth'})">Explore My Sound & Services</button>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="about-text">
+        <h2>About Bay'Hef / DJ Ayan Beatz</h2>
+        <p>"Music isn't just a passion; it's my heritage." I'm a seasoned veteran with a decade of experience igniting dance floors from the Bay Area to Reno, Dallas, and Seattle. Born into a musical family in Oakland, CA, my upbringing immersed me in a rich tapestry of genres. My uncle, Dwayne Wiggins of Tony! Toni! Toné!, another uncle who toured with Janet Jackson, and my stepfather, a touring singer, all instilled in me a deep appreciation for diverse sounds and the power of performance.</p>
+        <p>My experience runs deep within the nightlife industry. As a former club owner, promoter, and General Manager of The Bluebird Reno for three years, I bring an unparalleled understanding of what makes a night truly unforgettable, from operations to crowd engagement.</p>
+        <h3>Musical Versatility:</h3>
+        <p>Bay'Hef: Specializing in HipHop, Reggae, and R&B, with a particular mastery of classic and contemporary R&B, cultivated from a childhood surrounded by its soulful melodies. I possess an innate ability to read and respond to a crowd, ensuring the perfect vibe.</p>
+        <p>DJ Ayan Beatz: Unleashing high-energy EDM sets that keep the party pumping until the early hours.</p>
+        <h3>Beyond the Decks - The MC Advantage:</h3>
+        <p>I'm not just a DJ; I'm an accomplished MC, capable of taking the mic to hype the crowd, engage guests, and elevate the energy of any event. I seamlessly blend music with vibrant audience interaction.</p>
+        <h3>The "Party System" Advantage:</h3>
+        <p>My experience as a club owner, promoter, and GM has equipped me with invaluable insights into the intricacies of successful nightlife. This isn't just about playing music; it's about understanding flow, crowd dynamics, operational excellence, and maximizing your venue's potential.</p>
+      </div>
+      <div class="about-image">
+        <img src="images/Bay'Hef.jpeg" alt="Professional portrait of Bay'Hef / DJ Ayan Beatz" />
+      </div>
+    </section>
+
+    <section id="mixes" class="mixes">
+      <h2>Mixes & Sound</h2>
+      <div class="mixes-grid">
+        <div class="mix-card">
+          <div class="mix-title">The Bay Area Soul Collection (R&B / HipHop)</div>
+          <div class="mix-description">A smooth journey through classic and contemporary R&B and HipHop, perfect for setting a sophisticated yet grooving atmosphere. This mix showcases my deep roots in soulful melodies and rhythmic beats.</div>
+          <audio class="mix-audio" controls>
+            <source src="Mixes by Bay'Hef/Radio Mix - Bay'Hef.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div class="mix-card">
+          <div class="mix-title">Reno Nightlife Anthem (EDM)</div>
+          <div class="mix-description">Get ready to feel the bass! This high-energy EDM mix is designed to ignite the dance floor and keep the party peaking with driving beats and infectious melodies.</div>
+          <audio class="mix-audio" controls>
+            <source src="Mixes by Bay'Hef/Bay'Hef Dubstep Mix.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div class="mix-card">
+          <div class="mix-title">Late Night Vibe (Open Format / Current Hits)</div>
+          <div class="mix-description">My signature open-format blend, effortlessly mixing current chart-toppers with timeless hits across genres. This mix demonstrates my versatility and ability to cater to any crowd.</div>
+          <audio class="mix-audio" controls>
+            <source src="Mixes by Bay'Hef/Radio Mix 2 - Bay'Hef.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div class="mix-card">
+          <div class="mix-title">Global Grooves (Reggae / World)</div>
+          <div class="mix-description">A vibrant selection of Reggae and global rhythms that transport your audience to sun-drenched beaches and carnival vibes. Ideal for themed nights or diverse crowds.</div>
+          <audio class="mix-audio" controls>
+            <source src="Mixes by Bay'Hef/Bay'Hef Upbeat Mix.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+    </section>
+
+    <section id="venue" class="venue">
+      <h2>What I Bring to Your Venue</h2>
+      <p><strong>Built-in Following & Promotional Power:</strong><br />
+      From my experience as a manager, promoter, and owner of a modeling/promotional agency, I bring more than just music. I come with a dedicated team and a substantial following ready to promote and support events. My network includes:</p>
+      <ul>
+        <li>Professional Go-Go Dancers</li>
+        <li>Skilled Bartenders</li>
+        <li>Talented Music Artists</li>
+        <li>And more – a full complement to enhance your events and drive attendance.</li>
+      </ul>
+      <p><strong>Crowd Creation & Curation:</strong><br />
+      I specialize in not only drawing a crowd but also understanding them. My ability to read and adapt to the room ensures engaged guests, a packed dance floor, and a constantly thriving atmosphere.</p>
+      <p><strong>Event Curation & Themed Nights:</strong><br />
+      My expertise goes beyond DJing. I am passionate about curating and creating cool themed nights that will attract new and old customers, ensuring fresh, exciting, and profitable experiences for your patrons. Let's brainstorm unique concepts together!</p>
+      <p><strong>Proven Track Record:</strong><br />
+      My 3 years as General Manager of The Bluebird Reno speak volumes about my ability to manage operations, lead promotional efforts, and consistently deliver successful, high-revenue events. I understand the business of nightlife from every angle.</p>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <h2>What Club Owners Are Saying</h2>
+      <div class="testimonials-list">
+        <div class="testimonial">
+          Every night Bay'Hef was on the decks at The Bluebird was a guaranteed success. He truly understands how to create an experience that keeps people coming back. His operational insight is an invaluable bonus.
+          <div class="testimonial-footer">– Caleb Kruger, Former The Bluebird Reno Team</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Let's Create Unforgettable Nights</h2>
+      <p>Ready to elevate your club's atmosphere and draw a dedicated crowd? Let's connect and discuss how my unique "Party System" can bring new energy and success to your venue.</p>
+      <p><strong>Booking Inquiries:</strong><br />
+      Email: <a href="mailto:wettentertainmentllc@gmail.com">wettentertainmentllc@gmail.com</a><br />
+      Phone: <a href="tel:+15302140676">530-214-0676</a></p>
+      <p><strong>Connect With Me:</strong></p>
+      <p class="social-links">
+        <a href="https://instagram.com/king_oakland" target="_blank" rel="noopener noreferrer">Instagram (king_oakland)</a> |
+        <a href="https://instagram.com/DjAyanBeatz" target="_blank" rel="noopener noreferrer">Instagram (DJ Ayan Beatz)</a> |
+        <a href="https://facebook.com/YourFacebookPage" target="_blank" rel="noopener noreferrer">Facebook</a> |
+        <a href="https://tiktok.com/@bayhef" target="_blank" rel="noopener noreferrer">TikTok (@bayhef)</a>
+      </p>
+    </section>
+  </div>
+</body>
+</html>
